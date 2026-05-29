@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0a010f;
+}
+
+#criarNota{
+    border: 2px solid #ff00ff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #e2dce2;
+    background-color: #000;
+    font-size: 15px;
+    align-items: center;
+    align-self: center;
+    
+    box-shadow: 0 0 5px #ff00ff, 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    transition: all 0.3s ease-in-out;
+}
+
+#criarNota:hover {
+    box-shadow: 0 0 10px #ff00ff, 0 0 12px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  gap: 3px;
+  padding: 5px;
+}
+.container div { 
+  padding: 10px;
+}
+.container div.header {
+  grid-area: header;
+  text-align: center;
+  background-color: #0a010f;
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+.container div.menu {
+  grid-area: menu;
+  background-color: #0a010f;
+  
+}
+.container div.content {
+  grid-area: content;
+  background-color: #0a010f;
+  color: #e2dce2;
+  border: 0.5px solid #e2dce280;
+  
+}
+.container div.footer {
+  grid-area: footer;
+  text-align: center;  
+  background-color: #0a010f;
+  padding: 10px;
+  color: white;
+}
+
+h2{
+    color:antiquewhite;
+    font-size: 15px;
+}
+
+#menu {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 3px;
+  padding: 5px;
+}
+
+#novaNota{
+    display: flex;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+#abas{
+    display: grid;
+    gap: 20px;
+    padding: 5px;
+}
+
+.aba{
+    background-color: #200120ab;
+    border-radius: 12px;
+    border-right: 3px solid #ff00ff;
+}
+
+#Etiquetas{
+    display: grid;
+    gap: 20px;
+    padding: 5px;
+}
+.etiqueta{
+    border-radius: 12px;
+}
+
+#etiqueta_trabalho{
+    border:2px outset #49f9ff;
+}
+
+#etiqueta_estudos{
+    border:2px outset #ff49ff;
+}
+
+#etiqueta_ideias{
+    border:2px outset #f3ff49;
+}
+
+#etiqueta_pessoal{
+    border:2px outset #8f49ff;
+}
+
+#etiqueta_projetos{
+    border:2px outset #ff4949;
+}
+
+#criarEtiqueta{
+    width: 100%;
+    height: 50px;
+    border: 2px solid #ff00ff;
+    color: #e2dce2;
+    border-radius: 12px;
+    background-color: #0a010f;
+    border: none;
+    font-size: 16px;
+    text-align: justify;
+}

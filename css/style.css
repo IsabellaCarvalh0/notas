@@ -140,3 +140,33 @@ h2{
     font-size: 16px;
     text-align: justify;
 }
+.header{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 3px;
+  padding: 5px;
+}
+
+#divBusca{
+  background-color:#333235;
+  border:solid 1px;
+  border-radius:15px;
+  width:350px;
+  height: 50px;
+}
+
+#txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-style:italic;
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:260px;
+}
+
+#btnBusca{
+  float: right;
+  margin-top: 1%;
+}

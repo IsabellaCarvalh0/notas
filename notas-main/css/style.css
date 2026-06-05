@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0a010f;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "menu header"
+    "menu content"
+    "menu footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 20% 80%;
+  min-height: 100vh;
+}
+.container div { 
+  padding: 10px;
+}
+.container div.header {
+  grid-area: header;
+  text-align: center;
+  background-color: #0a010f;
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+.container div.menu {
+  grid-area: menu;
+  background-color: #0a010f;
+  
+}
+.container div.content {
+  grid-area: content;
+  background-color: #0a010f;
+  color: #e2dce2;
+  border: 0.5px solid #e2dce280;
+  
+}
+.container div.footer {
+  grid-area: footer;
+  text-align: center;  
+  background-color: #0a010f;
+  padding: 10px;
+  color: white;
+}
+
+h2{
+    color:antiquewhite;
+    font-size: 15px;
+}
+
+.header{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 3px;
+  padding: 5px;
+}
+
+#divBusca{
+  background-color:#333235;
+  border:solid 1px;
+  border-radius:15px;
+  width:350px;
+  height: 50px;
+}
+
+#txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-style:italic;
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:260px;
+}
+
+#btnBusca{
+  float: right;
+  margin-top: 1%;
+}

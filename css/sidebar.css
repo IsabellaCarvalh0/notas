@@ -1,0 +1,194 @@
+#criarNota{
+    width: 95%;
+    padding: 1rem; /*rem é relativo ao tamanho padrão da fonte da página (1rem = 16px)*/
+    border: 2px solid #7b61ff;
+    border-radius: 12px;
+    background-color: #111827;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer; /*mouse muda para um item clicável*/
+    transition: 0.5s;
+}
+
+#criarNota:hover{
+    background-color: #1e293b;
+    border-color: #9f7aea;
+    transform: translateY(-2px); /*o botão se move para cima*/
+}
+
+#menu{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    padding: 2vh 1.5vw;
+    border-right: 1px solid #2a0b42;
+    min-height: 100vh;
+    transition: transform 0.4s;
+}
+
+#novaNota{
+    display: flex;
+    justify-content: center;
+}
+
+#abas{
+    display: grid;
+    gap: 2vh;
+    padding: 0.5vh;
+}
+
+.aba{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.1vh 5%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.aba i, .aba h2{ /*o ícone e a escrita ficam cinza*/
+    color: #9ca3af;
+    transition: 0.3s;
+}
+
+.aba:hover{
+    background-color: rgba(123, 97, 255, 0.08);
+    border-right: 4px solid #8b5cf6;
+    color:#8b5cf6;
+}
+
+.aba:hover i,.aba:hover h2{
+    color: #f8fafc;
+}
+
+#Etiquetas{
+    display: grid;
+    gap: 1.5vh;
+    padding: 0.5vh;
+}
+
+.etiqueta{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1.2vh 4%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#criarEtiqueta{
+    width: 100%;
+    height: 7.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10% 5%;
+    background-color: transparent;
+    color: #e2dce2;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#criarEtiqueta:hover{
+    background-color: rgba(123, 97, 255, 0.08);
+}
+
+#logoSidebar img{
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.bolinha{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.bolinha.trabalho{
+    background-color: #5eead4;
+    box-shadow: 0 0 8px #5eead4;
+}
+
+.bolinha.estudos{
+    background-color: #60a5fa;
+    box-shadow: 0 0 8px #60a5fa;
+}
+
+.bolinha.ideias{
+    background-color: #4ade80;
+    box-shadow: 0 0 8px #4ade80;
+}
+
+.bolinha.projetos{
+    background-color: #fbbf24;
+    box-shadow: 0 0 8px #fbbf24;
+}
+
+.bolinha.pessoal{
+    background-color: #f472b6;
+    box-shadow: 0 0 8px #f472b6;
+}
+
+.contador{
+    margin-left: auto;
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 10px;
+    background-color: rgba(229, 231, 235, 0.15);
+}
+
+/* quando a aba é selecionada por um click*/
+.aba.ativa{
+    background-color: rgba(123, 97, 255, 0.08);
+    border-right: 4px solid #8b5cf6;
+}
+
+.aba.ativa i, .aba.ativa h2{
+    color: #f8fafc;
+}
+
+#botaoMenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13rem;
+    height: 2.1rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.7rem;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#botaoMenu:hover{
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+#menu.menuFechado{
+    transform: translateX(-75%);
+}
+
+#topoSidebar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media(max-width: 768px){
+    #menu{
+        width: 70%;
+    }
+    #botaoMenu{
+        display: block;
+    }
+}
+

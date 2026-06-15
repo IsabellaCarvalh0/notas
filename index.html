@@ -6,23 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="imagens/logoNotas.png">
     <script src="js/app.js"></script>
+    <script src="js/header.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!--adiciona os ícones das etiquetas-->
   </head>
 
   <body>
     <div class="container">
       <div class="header">
-        <div>
-          <h1> Cabeçalho </h1>
-        </div>
+  <div>
+    <h1>Minhas Notas</h1>
+  </div>
 
-        <div id="divBusca">
-          <input type="text" id="txtBusca" placeholder="Buscar nota..."/>
-          <img src="imagens/lupa.png" id="btnBusca" alt="Buscar"/>
-        </div>
-      </div>
+  <div id="divBusca">
+    <input type="text" id="txtBusca" placeholder="Buscar nota..." />
+    <img src="imagens/lupa.png" id="btnBusca" alt="Buscar" />
+  </div>
+
+  <div id="acoesHeader">
+    <button class="btnHeader" id="btnOrdenar" title="Ordenar">
+      <i class="fa-solid fa-arrow-down-wide-short"></i>
+    </button>
+    <button class="btnHeader" id="btnVisualizacao" title="Alternar visualização">
+      <i class="fa-solid fa-grip"></i>
+    </button>
+    <button class="btnHeader" id="btnPerfil" title="Perfil">
+      <i class="fa-solid fa-user"></i>
+    </button>
+  </div>
+</div>
+
 
       <div class="menu" id="menu"> <!--parte do sidebar-->
         <div id="topoSidebar">

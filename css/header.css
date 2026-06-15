@@ -1,0 +1,136 @@
+/* ===== Pessoa 4 — Área Superior + Pesquisa ===== */
+
+.header {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 24px !important;
+  background-color: #0a010f;
+  border-bottom: 1px solid #e2dce233;
+}
+
+/* Título / lado esquerdo */
+.header > div:first-child h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #e2dce2;
+  letter-spacing: 0.3px;
+}
+
+/* Barra de pesquisa */
+#divBusca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1c1a20;
+  border: 1px solid #e2dce233;
+  border-radius: 999px;
+  width: 380px;
+  height: 44px;
+  padding: 0 14px;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+#divBusca:focus-within {
+  border-color: #b388ff;
+  background-color: #211e26;
+  box-shadow: 0 0 0 3px rgba(179, 136, 255, 0.18);
+}
+
+#txtBusca {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e2dce2;
+  font-size: 15px;
+  font-style: normal;
+  height: 100%;
+  padding: 0;
+  float: none;
+  width: auto;
+}
+
+#txtBusca::placeholder {
+  color: #e2dce266;
+  font-style: italic;
+}
+
+#btnBusca {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity .2s ease, transform .2s ease;
+  float: none;
+  margin: 0;
+}
+
+#btnBusca:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Botões superiores */
+#acoesHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btnHeader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  min-width: 40px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid #e2dce233;
+  background-color: #1c1a20;
+  color: #e2dce2;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color .2s ease, border-color .2s ease,
+              transform .15s ease, box-shadow .2s ease;
+}
+
+.btnHeader i { font-size: 14px; }
+
+.btnHeader:hover {
+  background-color: #2a262f;
+  border-color: #b388ff66;
+}
+
+.btnHeader:focus-visible {
+  outline: none;
+  border-color: #b388ff;
+  box-shadow: 0 0 0 3px rgba(179, 136, 255, 0.2);
+}
+
+.btnHeader.is-clicked {
+  transform: scale(0.94);
+  background-color: #3a2f4a;
+  border-color: #b388ff;
+}
+
+/* Estado "sem resultados" para a área de notas */
+.semResultados {
+  color: #e2dce2aa;
+  text-align: center;
+  padding: 24px;
+  font-style: italic;
+}
+
+/* Responsivo simples */
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #divBusca { width: 100%; order: 3; }
+  #acoesHeader { order: 2; }
+}

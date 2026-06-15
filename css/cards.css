@@ -1,0 +1,80 @@
+.notes-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.note-card{
+    background:#1e1e2f;
+    border:1px solid #4b3f72;
+
+    border-radius:16px;
+    padding:20px;
+
+    min-height:180px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    transition:0.3s;
+}
+
+.note-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:0 0 15px rgba(128,90,213,0.4);
+}
+
+.note-title{
+    color:white;
+    margin-bottom:10px;
+}
+
+.note-description{
+    color:#d1d1d1;
+    line-height:1.5;
+}
+
+.card-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+}
+
+.edit-btn,
+.delete-btn{
+    width:35px;
+    height:35px;
+
+    border:none;
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+.edit-btn{
+    background:#6c63ff;
+    color:white;
+}
+
+.delete-btn{
+    background:#ff4d6d;
+    color:white;
+}
+.note-card{
+    animation: aparecer 0.8s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}

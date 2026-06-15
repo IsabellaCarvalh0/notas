@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!--adiciona os ícones das etiquetas-->
   </head>
 
@@ -116,8 +117,30 @@
       </div>
 
       <div class="content">
-        <h3>Minhas Notas</h3>
-      </div>
+    <h3>Minhas Notas</h3>
+
+    <div class="notes-grid">
+
+        <div class="note-card">
+            <h4 class="note-title">Trabalho de Front-End</h4>
+
+            <p class="note-description">
+                Finalizar a implementação dos cards.
+            </p>
+
+            <div class="card-actions">
+                <button class="edit-btn">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+
+                <button class="delete-btn">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
       <div class="footer">
         <h4>Rodapé</h4>
@@ -125,5 +148,6 @@
       
     </div>
     <script src="js/sidebar.js"></script>
+    <script src="js/cards.js"></script>
   </body>
 </html>

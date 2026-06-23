@@ -1,30 +1,29 @@
-const favoritos = document.querySelectorAll(".favorite-btn");
+document.addEventListener("click", function(e){
+    const botao = e.target.closest(".favorite-btn");
+    if(!botao) return;
 
-favoritos.forEach(botao => {
-    botao.addEventListener("click", () => {
-        botao.classList.toggle("active");
-        const icone = botao.querySelector("i");
+    botao.classList.toggle("active");
+    const icone = botao.querySelector("i");
 
-        if(botao.classList.contains("active")){
-            icone.classList.remove("fa-regular");
-            icone.classList.add("fa-solid");
-        }else{
-            icone.classList.remove("fa-solid");
-            icone.classList.add("fa-regular");
-        }
-    });
+    if(botao.classList.contains("active")){
+        icone.classList.remove("fa-regular");
+        icone.classList.add("fa-solid");
+    }else{
+        icone.classList.remove("fa-solid");
+        icone.classList.add("fa-regular");
+    }
 });
 
-document.querySelectorAll(".delete-btn")
-.forEach(botao => {
-    botao.addEventListener("click", () => {
-        const card = botao.closest(".note-card");
-        card.classList.add("removendo");
+document.addEventListener("click", function(e){
+    const botao = e.target.closest(".delete-btn");
+    if(!botao) return;
 
-        setTimeout(() => {
-            card.remove();
-        }, 800); 
-    });
+    const card = botao.closest(".note-card");
+    card.classList.add("removendo");
+
+    setTimeout(() => {
+        card.remove();
+    }, 800);
 });
 
 document.addEventListener("click", function(e){

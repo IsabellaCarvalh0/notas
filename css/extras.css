@@ -24,7 +24,7 @@
 }
 
 .note-card.removendo {
-    animation: fecharCard .8s ease forwards;
+    animation: fecharCard .8s ease forwards !important;
 }
 
 .note-card:nth-child(1) {

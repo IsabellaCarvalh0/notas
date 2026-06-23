@@ -1,10 +1,11 @@
-document.addEventListener("click", function(e){
+// document.addEventListener("click", function(e){
 
-    if(e.target.closest(".delete-btn")){
-        e.target.closest(".note-card").remove();
-    }
+//     if(e.target.closest(".delete-btn")){
+//         e.target.closest(".note-card").remove();
+//     }
 
-});
+// }); retirado para adicionar animação de fechamento do card
+
 document.addEventListener("click", function(e){
 
     if(e.target.closest(".edit-btn")){
@@ -47,7 +48,7 @@ btnCriar.addEventListener("click", () => {
 
     const novaNota = document.createElement("div");
 
-    novaNota.classList.add("note-card");
+    novaNota.classList.add("note-card", "novo");   // adicionado a classe "novo" para ativar a animação de abertura do card
 
     novaNota.innerHTML = `
         <h4 class="note-title">${titulo}</h4>
@@ -71,6 +72,4 @@ btnCriar.addEventListener("click", () => {
         .querySelector(".notes-grid")
         .appendChild(novaNota);
 
-
-
-    });
+});

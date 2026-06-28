@@ -62,3 +62,59 @@ if (typeof mediaMobile.addEventListener === "function") {
 }
 
 aplicarEstadoInicial();
+
+let filtroAtual = "notas";
+
+function mostrarNotas(tipo) {
+    filtroAtual = tipo;
+
+    const cards = document.querySelectorAll(".note-card");
+
+    cards.forEach(card => {
+        switch (tipo) {
+            case "notas":
+                card.style.display = card.classList.contains("lixeira") ? "none" : "";
+                break;
+
+            case "favoritas":
+                card.style.display =
+                    card.classList.contains("favorita") &&
+                        !card.classList.contains("lixeira")
+                        ? ""
+                        : "none";
+                break;
+
+            case "lixeira":
+                card.style.display = card.classList.contains("lixeira") ? "" : "none";
+                break;
+
+            case "trabalho":
+            case "estudos":
+            case "ideias":
+            case "projetos":
+            case "pessoal":
+                card.style.display = getEtiqueta(card) === tipo ? "" : "none";
+                break;
+
+        }
+    });
+}
+
+document.getElementById("btnNotas").addEventListener("click", () => {
+    mostrarNotas("notas");
+});
+
+document.getElementById("btnFavoritas").addEventListener("click", () => {
+    mostrarNotas("favoritas");
+});
+
+document.getElementById("btnLixeira").addEventListener("click", () => {
+    mostrarNotas("lixeira");
+});
+
+document.querySelectorAll(".etiqueta").forEach(et => {
+    et.addEventListener("click", () => {
+        const nome = et.querySelector("h2").textContent.toLowerCase();
+        mostrarNotas(nome);
+    });
+});

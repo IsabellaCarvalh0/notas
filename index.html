@@ -24,9 +24,7 @@
     </button>
 
     <div class="header">
-      <div>
-        <h1>Minhas Notas</h1>
-      </div>
+
 
       <div id="divBusca">
         <input type="text" id="txtBusca" placeholder="Buscar nota..." />
@@ -58,22 +56,17 @@
       </div>
       <div id="abas">
 
-        <div class="aba">
+        <div class="aba" id="btnNotas">
           <i class="fa-solid fa-note-sticky"></i>
           <h2>Notas</h2>
         </div>
 
-        <div class="aba">
+        <div class="aba" id="btnFavoritas">
           <i class="fa-solid fa-star"></i>
           <h2>Favoritas</h2>
         </div>
 
-        <div class="aba">
-          <i class="fa-solid fa-box-archive"></i>
-          <h2>Arquivadas</h2>
-        </div>
-
-        <div class="aba">
+        <div class="aba" id="btnLixeira">
           <i class="fa-solid fa-trash"></i>
           <h2>Lixeira</h2>
         </div>
@@ -90,31 +83,31 @@
         <div class="etiqueta">
           <span class="bolinha trabalho"></span>
           <h2>Trabalho</h2>
-          <span class="contador">6</span>
+          <span class="contador" data-etiqueta="trabalho">0</span>
         </div>
 
         <div class="etiqueta">
           <span class="bolinha estudos"></span>
           <h2>Estudos</h2>
-          <span class="contador">3</span>
+          <span class="contador" data-etiqueta="estudos">0</span>
         </div>
 
         <div class="etiqueta">
           <span class="bolinha ideias"></span>
           <h2>Ideias</h2>
-          <span class="contador">2</span>
+          <span class="contador" data-etiqueta="ideias">0</span>
         </div>
 
         <div class="etiqueta">
           <span class="bolinha projetos"></span>
           <h2>Projetos</h2>
-          <span class="contador">1</span>
+          <span class="contador" data-etiqueta="projetos">0</span>
         </div>
 
         <div class="etiqueta">
           <span class="bolinha pessoal"></span>
           <h2>Pessoal</h2>
-          <span class="contador">5</span>
+          <span class="contador" data-etiqueta="pessoal">0</span>
         </div>
 
       </div>
@@ -235,7 +228,6 @@
     </div>
 
     <div class="footer">
-      <h4>Rodapé</h4>
     </div>
 
   </div>

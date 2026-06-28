@@ -1,43 +1,55 @@
-#criarNota{
+#criarNota {
     width: 95%;
-    padding: 1rem; /*rem é relativo ao tamanho padrão da fonte da página (1rem = 16px)*/
+    padding: 1rem;
     border: 2px solid #7b61ff;
     border-radius: 12px;
     background-color: #111827;
     color: white;
     font-size: 1rem;
-    cursor: pointer; /*mouse muda para um item clicável*/
+    cursor: pointer;
     transition: 0.5s;
 }
 
-#criarNota:hover{
+#criarNota:hover {
     background-color: #1e293b;
     border-color: #9f7aea;
-    transform: translateY(-2px); /*o botão se move para cima*/
+    transform: translateY(-2px);
 }
 
-#menu{
+#menu {
+    width: var(--sidebar-width);
+    min-width: 0;
+    max-width: 100vw;
     display: flex;
     flex-direction: column;
     gap: 2vh;
     padding: 2vh 1.5vw;
     border-right: 1px solid #2a0b42;
     min-height: 100vh;
-    transition: transform 0.4s;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: translateX(0);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
 }
 
-#novaNota{
+#menu.menuFechado {
+    transform: translateX(-100%);
+    pointer-events: none;
+}
+
+#novaNota {
     display: flex;
     justify-content: center;
 }
 
-#abas{
+#abas {
     display: grid;
     gap: 2vh;
     padding: 0.5vh;
 }
 
-.aba{
+.aba {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -47,28 +59,30 @@
     transition: 0.3s;
 }
 
-.aba i, .aba h2{ /*o ícone e a escrita ficam cinza*/
+.aba i,
+.aba h2 {
     color: #9ca3af;
     transition: 0.3s;
 }
 
-.aba:hover{
+.aba:hover {
     background-color: rgba(123, 97, 255, 0.08);
     border-right: 4px solid #8b5cf6;
-    color:#8b5cf6;
+    color: #8b5cf6;
 }
 
-.aba:hover i,.aba:hover h2{
+.aba:hover i,
+.aba:hover h2 {
     color: #f8fafc;
 }
 
-#Etiquetas{
+#Etiquetas {
     display: grid;
     gap: 1.5vh;
     padding: 0.5vh;
 }
 
-.etiqueta{
+.etiqueta {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -78,13 +92,13 @@
     transition: 0.5s;
 }
 
-#criarEtiqueta{
+#criarEtiqueta {
     width: 100%;
-    height: 7.5vh;
+    min-height: 48px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10% 5%;
+    padding: 0 5%;
     background-color: transparent;
     color: #e2dce2;
     border: none;
@@ -94,48 +108,55 @@
     transition: 0.3s;
 }
 
-#criarEtiqueta:hover{
+#criarEtiqueta:hover {
     background-color: rgba(123, 97, 255, 0.08);
 }
 
-#logoSidebar img{
-    width: 50%;
-    height: auto;
+#logoSidebar {
+    display: flex;
+    justify-content: center;
+}
+
+#logoSidebar img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
     border-radius: 50%;
 }
 
-.bolinha{
+.bolinha {
     width: 10px;
     height: 10px;
+    flex: 0 0 10px;
     border-radius: 50%;
 }
 
-.bolinha.trabalho{
+.bolinha.trabalho {
     background-color: #5eead4;
     box-shadow: 0 0 8px #5eead4;
 }
 
-.bolinha.estudos{
+.bolinha.estudos {
     background-color: #60a5fa;
     box-shadow: 0 0 8px #60a5fa;
 }
 
-.bolinha.ideias{
+.bolinha.ideias {
     background-color: #4ade80;
     box-shadow: 0 0 8px #4ade80;
 }
 
-.bolinha.projetos{
+.bolinha.projetos {
     background-color: #fbbf24;
     box-shadow: 0 0 8px #fbbf24;
 }
 
-.bolinha.pessoal{
+.bolinha.pessoal {
     background-color: #f472b6;
     box-shadow: 0 0 8px #f472b6;
 }
 
-.contador{
+.contador {
     margin-left: auto;
     color: white;
     font-size: 12px;
@@ -144,51 +165,97 @@
     background-color: rgba(229, 231, 235, 0.15);
 }
 
-/* quando a aba é selecionada por um click*/
-.aba.ativa{
+.aba.ativa {
     background-color: rgba(123, 97, 255, 0.08);
     border-right: 4px solid #8b5cf6;
 }
 
-.aba.ativa i, .aba.ativa h2{
+.aba.ativa i,
+.aba.ativa h2 {
     color: #f8fafc;
 }
 
-#botaoMenu{
+#botaoMenu {
+    position: absolute;
+    top: 2.4rem;
+    left: calc(var(--sidebar-width) + 0.75rem);
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 13rem;
-    height: 2.1rem;
+    width: 2.75rem;
+    height: 2.755rem;
+    padding: 0;
     background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 0.7rem;
     color: white;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: 0.3s;
+    transition: left 0.4s ease, background-color 0.3s ease, transform 0.3s ease;
 }
 
-#botaoMenu:hover{
+#botaoMenu:hover {
     background-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.04);
 }
 
-#menu.menuFechado{
-    transform: translateX(-75%);
+.container.menuFechado #botaoMenu {
+    left: 1rem;
 }
 
-#topoSidebar{
+#topoSidebar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-@media(max-width: 768px){
-    #menu{
-        width: 70%;
+@media (max-width: 768px) {
+    #menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 900;
+        width: var(--sidebar-mobile-width);
+        height: 100vh;
+        padding: 80px 16px 24px;
+        background-color: #0a010f;
+        box-shadow: 18px 0 36px rgba(0, 0, 0, 0.45);
     }
-    #botaoMenu{
-        display: block;
+
+    #menu.menuFechado {
+        transform: translateX(-100%);
+        box-shadow: none;
+    }
+
+    #botaoMenu {
+        left: calc(var(--sidebar-mobile-width) + 0.75rem);
+    }
+
+    .container.menuFechado #botaoMenu {
+        left: 1rem;
+    }
+
+    .container:not(.menuFechado)::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 800;
+        background: rgba(0, 0, 0, 0.45);
     }
 }
 
+@media (max-width: 480px) {
+    :root {
+        --sidebar-mobile-width: 86vw;
+    }
+
+    #menu {
+        width: var(--sidebar-mobile-width);
+    }
+
+    #botaoMenu {
+        width: 2.55rem;
+        height: 2.55rem;
+    }
+}

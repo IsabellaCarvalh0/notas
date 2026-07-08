@@ -54,13 +54,6 @@ document.addEventListener("click", function (e) {
         }
     }
 
-    // Lixeira
-    if (e.target.closest(".delete-btn")) {
-        const card = e.target.closest(".note-card");
-        card.classList.add("lixeira");
-        mostrarNotas(filtroAtual);
-        atualizarContadores();
-    }
 
     // Favoritos
     if (e.target.closest(".favorite-btn")) {

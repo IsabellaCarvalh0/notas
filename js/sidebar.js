@@ -108,10 +108,6 @@ document.getElementById("btnFavoritas").addEventListener("click", () => {
     mostrarNotas("favoritas");
 });
 
-document.getElementById("btnLixeira").addEventListener("click", () => {
-    mostrarNotas("lixeira");
-});
-
 document.querySelectorAll(".etiqueta").forEach(et => {
     et.addEventListener("click", () => {
         const nome = et.querySelector("h2").textContent.toLowerCase();
